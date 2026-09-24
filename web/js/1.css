@@ -1,0 +1,42 @@
+/* Центрируем и смещаем модалку чуть ниже */
+#dishModal {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 1055; /* убедись, что поверх всего */
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Высота тела модалки + скролл */
+#dishModal .modal-content {
+  overflow-y: auto;
+}
+
+
+/* фиксируем обёртку поля поиска */
+.modal-search-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  padding-bottom: 5px;
+}
+
+/* делаем область со скроллом только у списка */
+.modal-scroll-area {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-top: 5px;
+  border-top: 1px solid #dee2e6;
+}
+#dishModal .modal-content {
+  --bs-modal-padding: 0 !important; /* отключаем внутренние отступы */
+  padding: 0 !important;
+}
+
+#dishModal.modal {
+  --bs-modal-margin: 0 !important;
+}
